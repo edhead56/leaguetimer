@@ -29,6 +29,7 @@ namespace League_Timer
                 {
                     var jsonget = "";
                     jsonget = wc.DownloadString("https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/SUMMONERIRD?api_key=YOURAPIKEY");
+                    //fill in your summoner id and riot api key in that link
                     gameLengther gameTime = JsonConvert.DeserializeObject<gameLengther>(jsonget);
                     int value = Convert.ToInt32(gameTime.gameLength);
                     if ((value > -150) && (value != 0))
@@ -37,6 +38,7 @@ namespace League_Timer
                         using (var client2 = new HttpClient())
                         {
                             var response = client2.GetAsync("https://maker.ifttt.com/trigger/YOUREVENTNAME/with/key/YOURKEY").Result;
+                            //fill in your event name and key. Get those at ifttt.com, you'll need a recipe using the maker channel and particle channel
                         }
                     
                     }
