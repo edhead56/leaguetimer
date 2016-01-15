@@ -53,12 +53,12 @@ namespace League_Timer
                 textBox1.Text = "some error";
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //just an exit button
         {
             Application.Exit();
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void timer1_Tick_1(object sender, EventArgs e) //add a timer that ticks every 3000 miliseconds so you don't eat up your usage
         {
             jsonGetting();
         }
